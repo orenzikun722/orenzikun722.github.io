@@ -1,7 +1,8 @@
 .box {
   border: solid;
-  border-radius: 20px;
+  border-radius: 10px;
   border-color: #767600;
+  border-width: 5px
 }
 
 body{
