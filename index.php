@@ -1,3 +1,17 @@
+<?php
+  //カウント数が記録してあるファイルを読み書きできるモードで開く
+  $fp = fopen('count.dat', 'r+b');
+
+  //ファイルを排他ロックする
+  flock($fp, LOCK_EX);
+
+  //ファイルからカウント数を取得する
+  $count = fgets($fp);
+
+  //カウント数を1増やす
+  $count++;
+?>
+
 <html>
   <head>
     <script src="main.js"></script>
@@ -5,6 +19,7 @@
     <meta name="viewport" content="width=360px">
   </head>
   <body>
+    <h3><?php echo $count; ?></h3>
     <h1>
       日記
     </h1>
